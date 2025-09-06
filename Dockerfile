@@ -13,10 +13,10 @@ COPY . /src
 # Build site with optional baseURL override
 RUN if [ -z "$HUGO_BASEURL" ]; then \
       echo "Building site using baseURL from hugo.toml"; \
-      hugo --minify --gc --enableGitInfo; \
+      hugo --minify --gc --enableGitInfo --destination /build; \
     else \
       echo "Building site with HUGO_BASEURL=$HUGO_BASEURL"; \
-      hugo --minify --gc --enableGitInfo --baseURL "$HUGO_BASEURL"; \
+      hugo --minify --gc --enableGitInfo --destination /build --baseURL "$HUGO_BASEURL"; \
     fi
 
 # Optional: fallback 404 page for multi-language sites
@@ -28,4 +28,4 @@ RUN if [ -z "$HUGO_BASEURL" ]; then \
 FROM hugomods/hugo:nginx
 
 # Copy built static site
-COPY --from=builder /src/public /site
+COPY --from=builder  /site
