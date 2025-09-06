@@ -7,7 +7,7 @@ on:
 
 jobs:
   build-and-push:
-    runs-on: ubuntu-latest
+    runs-on: homelab-latest
     container:
       image: catthehacker/ubuntu:act-latest
     env:
@@ -35,7 +35,7 @@ jobs:
             HUGO_BASEURL=https://dev.comprofix.com/
 
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: homelab-latest
     needs: build-and-push
     env:
       DEPLOY_USER: administrator
