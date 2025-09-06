@@ -58,6 +58,7 @@ jobs:
           ssh-add <(echo "${{ secrets.SSH_PRIVATE_KEY }}")
           echo "Host *" > ~/.ssh/config
           echo "StrictHostKeyChecking no" >> ~/.ssh/config
+          echo "nameserver 10.10.10.1" > /etc/resolv.conf
 
           echo "Uploading docker-compose.yml and .env.production..."
           scp docker-compose.yml $DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH
