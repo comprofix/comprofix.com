@@ -47,6 +47,7 @@ jobs:
       DEPLOY_USER: administrator
       DEPLOY_HOST: docker.comprofix.xyz
       DEPLOY_PATH: /opt/comprofix
+      VERSION: ${{ github.ref_name }} # <-- get the tag that triggered this workflow
     steps:
       - uses: actions/checkout@v4
 
@@ -65,11 +66,8 @@ jobs:
           echo "Deploying production container..."
           ssh -o StrictHostKeyChecking=no $DEPLOY_USER@$DEPLOY_HOST "
             cd $DEPLOY_PATH
-            # Extract Git tag that triggered the workflow
-            VERSION=\${GITHUB_REF#refs/tags/}
-
-            # Update IMAGE_TAG in .env.production
-            sed -i 's/^IMAGE_TAG=.*/IMAGE_TAG=\$VERSION/' .env.production
+            # Replace IMAGE_TAG with the version from CI
+            sed -i 's/^IMAGE_TAG=.*/IMAGE_TAG=${VERSION}/' .env.production
 
             # Stop old container, pull new image, start container
             docker compose --env-file .env.production down --remove-orphans
