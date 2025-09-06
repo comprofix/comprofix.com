@@ -1,0 +1,12 @@
+{
+ "compilerOptions": {
+  "baseUrl": ".",
+  "paths": {
+   "*": [
+    "../../../.cache/hugo_cache/modules/filecache/modules/pkg/mod/git.comprofix.com/mmckinnon/hugo-theme-chirpy@v0.0.0-20250906020401-98acc1f743ac/assets/*",
+    "../../../.cache/hugo_cache/modules/filecache/modules/pkg/mod/github.com/gohugoio/hugo-mod-jslibs-dist/popperjs/v2@v2.21100.20000/package/dist/cjs/*",
+    "../../../.cache/hugo_cache/modules/filecache/modules/pkg/mod/github.com/twbs/bootstrap@v5.3.8+incompatible/js/*"
+   ]
+  }
+ }
+}

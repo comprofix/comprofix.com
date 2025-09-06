@@ -1,0 +1,35 @@
+{
+  "name": "chirpy-hugo-assets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/comprofix/chirpy-hugo-assets.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/comprofix/chirpy-hugo-assets/issues"
+  },
+  "homepage": "https://github.com/comprofix/chirpy-hugo-assets#readme",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^7.0.0",
+    "clipboard": "^2.0.11",
+    "dayjs": "^1.11.18",
+    "glightbox": "^3.3.1",
+    "lato-font": "^3.0.0",
+    "lazysizes": "^5.3.2",
+    "mermaid": "^11.10.1",
+    "source-sans-pro": "^3.6.0",
+    "tocbot": "^4.36.4"
+  },
+  "devDependencies": {
+    "fs-extra": "^11.3.1"
+  }
+}

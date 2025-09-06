@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Gitea on Comprofix</title><link>https://comprofix.com/categories/gitea/</link><description>Recent content in Gitea on Comprofix</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sat, 21 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://comprofix.com/categories/gitea/index.xml" rel="self" type="application/rss+xml"/><item><title>Continuous Integration &amp; Continuous Deployment</title><link>https://comprofix.com/post/2024-09-21-websitedeployment/</link><pubDate>Sat, 21 Sep 2024 00:00:00 +0000</pubDate><guid>https://comprofix.com/post/2024-09-21-websitedeployment/</guid><description>&lt;p&gt;Since the reset of the website, I have been working on getting it to auto build and deploy using &lt;a href="https://docs.gitea.com/usage/actions/overview"&gt;Gitea Actions&lt;/a&gt;. Which is similar and compatible to &lt;a href="https://github.com/features/actions"&gt;GitHub Actions&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Before implementing the action it was a manual process which required using docker commands to login, build and push the image to the container registry.&lt;/p&gt;
+&lt;h3 id="why-use-cicd" id=why-use-cicd&gt;
+ 
+ &lt;span class="me-2"&gt;Why use CI/CD?&lt;/span&gt;
+ &lt;a href="#why-use-cicd" class="anchor text-muted"&gt;&lt;i class="fas fa-hashtag"&gt;&lt;/i&gt;&lt;/a&gt;
+ 
+&lt;/h3&gt;&lt;p&gt;It takes the manual process steps away and does them for you, helping you to avoid missing any steps and avoiding errors. This also makes the interaction seamless and automated.&lt;/p&gt;</description></item></channel></rss>

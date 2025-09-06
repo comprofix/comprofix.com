@@ -1,0 +1,21 @@
+# The base URL for the site.
+baseURL = 'https://comprofix.com'
+# The title of the site.
+title = 'Comprofix'
+
+# Enable Git info › https://gohugo.io/methods/page/gitinfo/
+enableGitInfo = false
+
+
+# Pagination settings.
+[pagination]
+  pagerSize = 5
+
+# Make sure to include JSON output to support the search functionality.
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+# Import the theme.
+[module]
+  [[module.imports]]
+    path = "git.comprofix.com/mmckinnon/hugo-theme-chirpy"

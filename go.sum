@@ -1,0 +1,6 @@
+git.comprofix.com/mmckinnon/hugo-theme-chirpy v0.0.0-20250906020401-98acc1f743ac h1:Uu8gLLK9NUqsLY1GDajiZdjla3XsEDyRUUM0kFavSJM=
+git.comprofix.com/mmckinnon/hugo-theme-chirpy v0.0.0-20250906020401-98acc1f743ac/go.mod h1:ixqJnKZR5mdLUrA/GfADpVNf6dGxsQVio0OrPKj374w=
+github.com/gohugoio/hugo-mod-jslibs-dist/popperjs/v2 v2.21100.20000 h1:GZxx4Hc+yb0/t3/rau1j8XlAxLE4CyXns2fqQbyqWfs=
+github.com/gohugoio/hugo-mod-jslibs-dist/popperjs/v2 v2.21100.20000/go.mod h1:mFberT6ZtcchrsDtfvJM7aAH2bDKLdOnruUHl0hlapI=
+github.com/twbs/bootstrap v5.3.8+incompatible h1:eK1fsXP7R/FWFt+sSNmmvUH9usPocf240nWVw7Dh02o=
+github.com/twbs/bootstrap v5.3.8+incompatible/go.mod h1:fZTSrkpSf0/HkL0IIJzvVspTt1r9zuf7XlZau8kpcY0=
