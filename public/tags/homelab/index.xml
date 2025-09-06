@@ -1,10 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Homelab on Comprofix</title><link>https://comprofix.com/tags/homelab/</link><description>Recent content in Homelab on Comprofix</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sat, 06 Sep 2025 13:28:05 +1000</lastBuildDate><atom:link href="https://comprofix.com/tags/homelab/index.xml" rel="self" type="application/rss+xml"/><item><title>Continuous Integration &amp; Continuous Deployment</title><link>https://comprofix.com/post/2024-09-21-websitedeployment/</link><pubDate>Sat, 21 Sep 2024 00:00:00 +0000</pubDate><guid>https://comprofix.com/post/2024-09-21-websitedeployment/</guid><description>&lt;p&gt;Since the reset of the website, I have been working on getting it to auto build and deploy using &lt;a href="https://docs.gitea.com/usage/actions/overview"&gt;Gitea Actions&lt;/a&gt;. Which is similar and compatible to &lt;a href="https://github.com/features/actions"&gt;GitHub Actions&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Before implementing the action it was a manual process which required using docker commands to login, build and push the image to the container registry.&lt;/p&gt;
-&lt;h3 id="why-use-cicd" id=why-use-cicd&gt;
- 
- &lt;span class="me-2"&gt;Why use CI/CD?&lt;/span&gt;
- &lt;a href="#why-use-cicd" class="anchor text-muted"&gt;&lt;i class="fas fa-hashtag"&gt;&lt;/i&gt;&lt;/a&gt;
- 
-&lt;/h3&gt;&lt;p&gt;It takes the manual process steps away and does them for you, helping you to avoid missing any steps and avoiding errors. This also makes the interaction seamless and automated.&lt;/p&gt;</description></item><item><title>Reset and Restart</title><link>https://comprofix.com/post/2024-09-05-resetrestart/</link><pubDate>Thu, 05 Sep 2024 00:00:00 +0000</pubDate><guid>https://comprofix.com/post/2024-09-05-resetrestart/</guid><description>&lt;p&gt;It&amp;rsquo;s time to reset the website and start building my blog again. I have had this domain for a number of years and it has always been used for my E-Mail.&lt;/p&gt;
-&lt;p&gt;But the website has been more of a play ground for experimenting and testing.&lt;/p&gt;
-&lt;p&gt;I am now hoping to get into the habit of writing more blog posts as I document my journey as I experiment with my HomeLab.&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Homelab on Comprofix</title>
+    <link>http://localhost:1313/tags/homelab/</link>
+    <description>Recent content in Homelab on Comprofix</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 21 Sep 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/homelab/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Continuous Integration &amp; Continuous Deployment</title>
+      <link>http://localhost:1313/post/2024-09-21-websitedeployment/</link>
+      <pubDate>Sat, 21 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/2024-09-21-websitedeployment/</guid>
+      <description>&lt;p&gt;Since the reset of the website, I have been working on getting it to auto build and deploy using &lt;a href=&#34;https://docs.gitea.com/usage/actions/overview&#34;&gt;Gitea Actions&lt;/a&gt;. Which is similar and compatible to &lt;a href=&#34;https://github.com/features/actions&#34;&gt;GitHub Actions&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Before implementing the action it was a manual process which required using docker commands to login, build and push the image to the container registry.&lt;/p&gt;&#xA;&lt;h3 id=&#34;why-use-cicd&#34; id=why-use-cicd&gt;&#xA;  &#xA;    &lt;span class=&#34;me-2&#34;&gt;Why use CI/CD?&lt;/span&gt;&#xA;    &lt;a href=&#34;#why-use-cicd&#34; class=&#34;anchor text-muted&#34;&gt;&lt;i class=&#34;fas fa-hashtag&#34;&gt;&lt;/i&gt;&lt;/a&gt;&#xA;  &#xA;&lt;/h3&gt;&lt;p&gt;It takes the manual process steps away and does them for you, helping you to avoid missing any steps and avoiding errors. This also makes the interaction seamless and automated.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Reset and Restart</title>
+      <link>http://localhost:1313/post/2024-09-05-resetrestart/</link>
+      <pubDate>Thu, 05 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/2024-09-05-resetrestart/</guid>
+      <description>&lt;p&gt;It&amp;rsquo;s time to reset the website and start building my blog again. I have had this domain for a number of years and it has always been used for my E-Mail.&lt;/p&gt;&#xA;&lt;p&gt;But the website has been more of a play ground for experimenting and testing.&lt;/p&gt;&#xA;&lt;p&gt;I am now hoping to get into the habit of writing more blog posts as I document my journey as I experiment with my HomeLab.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
