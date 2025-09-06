@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  comprofix:
+    container_name: ${CONTAINER_NAME}
+    image: git.comprofix.com/mmckinnon/comprofix.com:${IMAGE_TAG}
+    restart: unless-stopped
+    networks:
+      - proxy
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.${CONTAINER_NAME}.rule=Host(`${HOSTNAME}`)
+      - traefik.http.routers.${CONTAINER_NAME}.entrypoints=https
+      - traefik.http.routers.${CONTAINER_NAME}.tls=true
+      - traefik.http.services.${CONTAINER_NAME}.loadbalancer.server.port=80
+
+networks:
+  proxy:
+    external: true

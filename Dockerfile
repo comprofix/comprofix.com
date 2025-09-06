@@ -1,22 +1,31 @@
 ###############
 # Build Stage #
 ###############
-FROM hugomods/hugo:exts as builder
-# Base URL
-# ARG HUGO_BASEURL=
-# ENV HUGO_BASEURL=${HUGO_BASEURL}
-# Build site
+FROM hugomods/hugo:exts AS builder
+
+# Base URL can be overridden at build time
+ARG HUGO_BASEURL
+ENV HUGO_BASEURL=${HUGO_BASEURL}
+
+# Copy source code
 COPY . /src
-RUN hugo --minify --gc
-# Set the fallback 404 page if defaultContentLanguageInSubdir is enabled, please replace the `en` with your default language code.
+
+# Build site with optional baseURL override
+RUN if [ -z "$HUGO_BASEURL" ]; then \
+      echo "Building site using baseURL from hugo.toml"; \
+      hugo --minify --gc --enableGitInfo; \
+    else \
+      echo "Building site with HUGO_BASEURL=$HUGO_BASEURL"; \
+      hugo --minify --gc --enableGitInfo --baseURL "$HUGO_BASEURL"; \
+    fi
+
+# Optional: fallback 404 page for multi-language sites
 # RUN cp ./public/en/404.html ./public/404.html
 
 ###############
 # Final Stage #
 ###############
 FROM hugomods/hugo:nginx
-LABEL "Matthew McKinnon"="<support@comprofix.com>"
 
+# Copy built static site
 COPY --from=builder /src/public /site
-
-

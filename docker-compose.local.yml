@@ -1,0 +1,9 @@
+version: "3.8"
+
+services:
+  comprofix:
+    container_name: ${CONTAINER_NAME}
+    image: git.comprofix.com/mmckinnon/comprofix.com:${IMAGE_TAG}
+    restart: unless-stopped
+    ports:
+      - "${LOCAL_PORT}:80"
