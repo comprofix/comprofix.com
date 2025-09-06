@@ -40,39 +40,39 @@ jobs:
           build-args: |
             HUGO_BASEURL=https://comprofix.com/
 
-deploy:
-  runs-on: ubuntu-latest
-  needs: build-and-push
-  env:
-    DEPLOY_USER: administrator
-    DEPLOY_HOST: docker.comprofix.xyz
-    DEPLOY_PATH: /opt/comprofix
-  steps:
-    - uses: actions/checkout@v4
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build-and-push
+    env:
+      DEPLOY_USER: administrator
+      DEPLOY_HOST: docker.comprofix.xyz
+      DEPLOY_PATH: /opt/comprofix
+    steps:
+      - uses: actions/checkout@v4
 
-    - name: Deploy to production server
-      run: |
-        mkdir -p ~/.ssh
-        eval $(ssh-agent -s)
-        ssh-add <(echo "${{ secrets.SSH_PRIVATE_KEY }}")
-        echo "Host *" > ~/.ssh/config
-        echo "StrictHostKeyChecking no" >> ~/.ssh/config
+      - name: Deploy to production server
+        run: |
+          mkdir -p ~/.ssh
+          eval $(ssh-agent -s)
+          ssh-add <(echo "${{ secrets.SSH_PRIVATE_KEY }}")
+          echo "Host *" > ~/.ssh/config
+          echo "StrictHostKeyChecking no" >> ~/.ssh/config
 
-        echo "Uploading docker-compose.yml and .env.production..."
-        scp docker-compose.yml $DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH
-        scp .env.production $DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH/.env.production
+          echo "Uploading docker-compose.yml and .env.production..."
+          scp docker-compose.yml $DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH
+          scp .env.production $DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH/.env.production
 
-        echo "Deploying production container..."
-        ssh -o StrictHostKeyChecking=no $DEPLOY_USER@$DEPLOY_HOST "
-          cd $DEPLOY_PATH
-          # Extract Git tag that triggered the workflow
-          VERSION=\${GITHUB_REF#refs/tags/}
+          echo "Deploying production container..."
+          ssh -o StrictHostKeyChecking=no $DEPLOY_USER@$DEPLOY_HOST "
+            cd $DEPLOY_PATH
+            # Extract Git tag that triggered the workflow
+            VERSION=\${GITHUB_REF#refs/tags/}
 
-          # Update IMAGE_TAG in .env.production
-          sed -i 's/^IMAGE_TAG=.*/IMAGE_TAG=\$VERSION/' .env.production
+            # Update IMAGE_TAG in .env.production
+            sed -i 's/^IMAGE_TAG=.*/IMAGE_TAG=\$VERSION/' .env.production
 
-          # Stop old container, pull new image, start container
-          docker compose --env-file .env.production down --remove-orphans
-          docker compose --env-file .env.production pull
-          docker compose --env-file .env.production up -d
-        "
+            # Stop old container, pull new image, start container
+            docker compose --env-file .env.production down --remove-orphans
+            docker compose --env-file .env.production pull
+            docker compose --env-file .env.production up -d
+          "
