@@ -8,6 +8,8 @@ on:
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
+    container:
+      image: catthehacker/ubuntu:act-latest
     env:
       DOCKER_REGISTRY: git.comprofix.com
       IMAGE_NAME: mmckinnon/comprofix.com
