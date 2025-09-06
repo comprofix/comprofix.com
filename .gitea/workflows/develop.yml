@@ -60,5 +60,5 @@ jobs:
           echo "Deploying development container..."
           ssh -o StrictHostKeyChecking=no $DEPLOY_USER@$DEPLOY_HOST "
             cd $DEPLOY_PATH
-            docker compose --env-file .env up -d
+            docker compose --env-file .env up -d --pull always
           "
