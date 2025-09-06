@@ -28,4 +28,4 @@ RUN if [ -z "$HUGO_BASEURL" ]; then \
 FROM hugomods/hugo:nginx
 
 # Copy built static site
-COPY --from=builder  /site
+COPY --from=builder /build /site
