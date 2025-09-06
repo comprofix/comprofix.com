@@ -7,7 +7,9 @@ on:
 
 jobs:
   build-and-push:
-    runs-on: ubuntu-latest
+    runs-on: homelab-latest
+    container:
+      image: catthehacker/ubuntu:act-latest
     env:
       DOCKER_REGISTRY: git.comprofix.com
       IMAGE_NAME: mmckinnon/comprofix.com
@@ -39,7 +41,7 @@ jobs:
             HUGO_BASEURL=https://comprofix.com/
 
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: homelab-latest
     needs: build-and-push
     env:
       DEPLOY_USER: administrator
