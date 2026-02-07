@@ -17,7 +17,7 @@ tagline = "Geek | Nerd | Systems Administrator | IT Specialist"  # it will displ
 
 [[social.links]]
   type = "custom"
-  id = "https://git.comprofix.com/mmckinnon"
+  id = "https://github.com/comprofix"
   icon = "fab fa-git-alt"
 
 [[social.links]]

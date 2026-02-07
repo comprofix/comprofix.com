@@ -18,4 +18,4 @@ enableGitInfo = false
 # Import the theme.
 [module]
   [[module.imports]]
-    path = "git.comprofix.com/mmckinnon/hugo-theme-chirpy"
+    path = "github.com/comprofix/comprofix-hugo-theme-chirpy"

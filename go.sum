@@ -1,5 +1,7 @@
-git.comprofix.com/mmckinnon/hugo-theme-chirpy v0.0.0-20250906020401-98acc1f743ac h1:Uu8gLLK9NUqsLY1GDajiZdjla3XsEDyRUUM0kFavSJM=
-git.comprofix.com/mmckinnon/hugo-theme-chirpy v0.0.0-20250906020401-98acc1f743ac/go.mod h1:ixqJnKZR5mdLUrA/GfADpVNf6dGxsQVio0OrPKj374w=
+github.com/comprofix/comprofix-chirpy-static-assets v0.0.0-20260205001421-829a28e35a01 h1:FnwUNiPKC8K5Nux05GZPXVwlSkwy/Nt9YUmuzMWO40g=
+github.com/comprofix/comprofix-chirpy-static-assets v0.0.0-20260205001421-829a28e35a01/go.mod h1:ggDx8GytRkveAZ2VaZX/O9G26ARswri7siE+9nteV30=
+github.com/comprofix/comprofix-hugo-theme-chirpy v0.0.0-20260204201117-ba5c4ea7349a h1:qIUFteGL6DoCF+job0CCgtWvfpXzqMLnhBuVnb2/Okg=
+github.com/comprofix/comprofix-hugo-theme-chirpy v0.0.0-20260204201117-ba5c4ea7349a/go.mod h1:Y6Udh1G5jxWXY3mSyKVCA5yPNa3flu48Si2me/rTXP4=
 github.com/gohugoio/hugo-mod-jslibs-dist/popperjs/v2 v2.21100.20000 h1:GZxx4Hc+yb0/t3/rau1j8XlAxLE4CyXns2fqQbyqWfs=
 github.com/gohugoio/hugo-mod-jslibs-dist/popperjs/v2 v2.21100.20000/go.mod h1:mFberT6ZtcchrsDtfvJM7aAH2bDKLdOnruUHl0hlapI=
 github.com/twbs/bootstrap v5.3.8+incompatible h1:eK1fsXP7R/FWFt+sSNmmvUH9usPocf240nWVw7Dh02o=
