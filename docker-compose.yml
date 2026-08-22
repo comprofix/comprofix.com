@@ -7,7 +7,7 @@ services:
       - proxy
     labels:
       - traefik.enable=true
-      - traefik.http.routers.${CONTAINER_NAME}.rule=Host(`${HOSTNAME}`, `www.${HOSTNAME}`)
+      - traefik.http.routers.${CONTAINER_NAME}.rule=Host(`${HOSTNAME}`) || Host(`www.${HOSTNAME}`)
       - traefik.http.routers.${CONTAINER_NAME}.entrypoints=https
       - traefik.http.routers.${CONTAINER_NAME}.tls=true
       - traefik.http.services.${CONTAINER_NAME}.loadbalancer.server.port=80
