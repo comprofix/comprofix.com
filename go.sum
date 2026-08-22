@@ -1,5 +1,5 @@
-github.com/comprofix/comprofix-chirpy-static-assets v0.0.0-20260822133059-a0808ce81600 h1:hOEQUiHyo9XA9TgzpFgXR8uDAix0k0nuFEagsUo0W28=
-github.com/comprofix/comprofix-chirpy-static-assets v0.0.0-20260822133059-a0808ce81600/go.mod h1:CeGHwXejRFmU0WStqGqIlJYwrK/jQZ2BwRfGcHlGBao=
+github.com/comprofix/comprofix-chirpy-static-assets v0.0.0-20260822133836-916a62840ba3 h1:VuCTXmq1CVgyKnon3Vj6RIW3y5PlRTXtzg6F8jofjQw=
+github.com/comprofix/comprofix-chirpy-static-assets v0.0.0-20260822133836-916a62840ba3/go.mod h1:CeGHwXejRFmU0WStqGqIlJYwrK/jQZ2BwRfGcHlGBao=
 github.com/comprofix/hugo-theme-chirpy v0.0.0-20260822133022-1b0fceadf5f5 h1:xfl98KK1HRLiG6jI5b6U3jF2SfiPMOVxfJOSc3nt4Kk=
 github.com/comprofix/hugo-theme-chirpy v0.0.0-20260822133022-1b0fceadf5f5/go.mod h1:hTwltAzwp4lcTxxKdcmL1WqYns77XXwnNBjPRqP/7aI=
 github.com/gohugoio/hugo-mod-jslibs-dist/popperjs/v2 v2.21100.20000 h1:GZxx4Hc+yb0/t3/rau1j8XlAxLE4CyXns2fqQbyqWfs=

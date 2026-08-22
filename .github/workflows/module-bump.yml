@@ -1,0 +1,80 @@
+name: Bump theme modules
+
+on:
+  repository_dispatch:
+    types: [module-updated]
+  schedule:
+    # Fallback in case a dispatch is ever missed.
+    - cron: "0 6 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: module-bump
+  cancel-in-progress: false
+
+env:
+  HUGO_VERSION: "0.131.0"
+
+jobs:
+  bump:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+
+      - name: Set up Node (for Dart Sass)
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install Dart Sass
+        run: npm install -g sass
+
+      - name: Install Hugo Extended
+        run: |
+          curl -sSL -o hugo.deb \
+            "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb"
+          sudo dpkg -i hugo.deb
+          hugo version
+
+      - name: Resolve latest commits
+        id: resolve
+        run: |
+          THEME_SHA=$(git ls-remote https://github.com/comprofix/hugo-theme-chirpy.git refs/heads/comprofix.com | cut -f1)
+          ASSETS_SHA=$(git ls-remote https://github.com/comprofix/comprofix-chirpy-static-assets.git refs/heads/main | cut -f1)
+          echo "theme_sha=$THEME_SHA" >> "$GITHUB_OUTPUT"
+          echo "assets_sha=$ASSETS_SHA" >> "$GITHUB_OUTPUT"
+
+      - name: Bump module pins
+        env:
+          GOFLAGS: -mod=mod
+        run: |
+          go get "github.com/comprofix/hugo-theme-chirpy@${{ steps.resolve.outputs.theme_sha }}"
+          go get "github.com/comprofix/comprofix-chirpy-static-assets@${{ steps.resolve.outputs.assets_sha }}"
+          hugo mod tidy
+
+      - name: Build
+        run: hugo --minify -d public
+
+      - name: Validate self-hosted asset paths
+        run: ./scripts/validate-self-hosted-assets.sh public
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add go.mod go.sum assets/jsconfig.json
+          if git diff --cached --quiet; then
+            echo "No module changes to commit"
+          else
+            git commit -m "chore: bump theme modules to latest"
+            git push
+          fi
