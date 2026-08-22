@@ -60,7 +60,7 @@ jobs:
           echo "Host *" > ~/.ssh/config
           echo "StrictHostKeyChecking no" >> ~/.ssh/config
 
-          ssh "$DEPLOY_USER@$DEPLOY_HOST" "mkdir -p $DEPLOY_PATH"
+          ssh "$DEPLOY_USER@$DEPLOY_HOST" "sudo mkdir -p $DEPLOY_PATH && sudo chown $DEPLOY_USER:$DEPLOY_USER $DEPLOY_PATH"
 
           echo "Uploading docker-compose.yml and .env..."
           scp docker-compose.yml "$DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH/docker-compose.yml"
