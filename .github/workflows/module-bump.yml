@@ -24,6 +24,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          # The default GITHUB_TOKEN is deliberately prevented from
+          # triggering other workflows when it pushes, to stop infinite
+          # loops. This job's commits need to trigger docker-deploy.yml,
+          # so it authenticates as a PAT instead.
+          token: ${{ secrets.DISPATCH_TOKEN }}
 
       - name: Set up Go
         uses: actions/setup-go@v5

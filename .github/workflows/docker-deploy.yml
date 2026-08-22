@@ -1,0 +1,72 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  packages: write
+
+concurrency:
+  group: docker-deploy
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: [self-hosted, Linux, X64]
+    env:
+      IMAGE_NAME: ghcr.io/comprofix/comprofix.com
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Determine image tag
+        id: vars
+        run: echo "sha_short=$(git rev-parse --short HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: |
+            ${{ env.IMAGE_NAME }}:latest
+            ${{ env.IMAGE_NAME }}:${{ steps.vars.outputs.sha_short }}
+          build-args: |
+            HUGO_BASEURL=https://comprofix.com/
+
+      - name: Deploy
+        env:
+          DEPLOY_USER: administrator
+          DEPLOY_HOST: docker.comprofix.xyz
+          DEPLOY_PATH: /opt/comprofix
+        run: |
+          mkdir -p ~/.ssh
+          eval $(ssh-agent -s)
+          ssh-add <(echo "${{ secrets.SSH_PRIVATE_KEY }}")
+          echo "Host *" > ~/.ssh/config
+          echo "StrictHostKeyChecking no" >> ~/.ssh/config
+
+          echo "Uploading docker-compose.yml and .env..."
+          scp docker-compose.yml "$DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH/docker-compose.yml"
+          scp .env "$DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH/.env"
+
+          echo "Deploying..."
+          ssh "$DEPLOY_USER@$DEPLOY_HOST" "
+            cd $DEPLOY_PATH
+            docker compose pull
+            docker compose up -d --remove-orphans
+          "
