@@ -18,9 +18,9 @@ Before implementing the action it was a manual process which required using dock
 
 It takes the manual process steps away and does them for you, helping you to avoid missing any steps and avoiding errors. This also makes the interaction seamless and automated.
 
-### Setting up the Aciton
+### Setting up the Action
 
-To setup the action we first needed to create some "secrets" in the repo. Secrets are secure variables that are requied to interact with systems. Such as passwords, usernames, SSH Keys etc.
+To setup the action we first needed to create some "secrets" in the repo. Secrets are secure variables that are required to interact with systems. Such as passwords, usernames, SSH Keys etc.
 
 ![gitea secrets](gitea-secrets.png)
 
@@ -95,7 +95,7 @@ jobs:
   container:
     image: catthehacker/ubuntu:act-latest
   ```
-  This specified the "container" to use to run all the steps on. This was crucial as running without a "conatiner" would fail as not all required dependencies where available
+  This specified the "container" to use to run all the steps on. This was crucial as running without a "container" would fail as not all required dependencies were available
 * ```yml 
   jobs:
     build-node:
