@@ -1,5 +1,5 @@
-github.com/comprofix/comprofix-chirpy-static-assets v0.0.0-20260822141537-cdca191eecba h1:oI3fnOWrywlPHlI97PyrfLC1GzzYhsrrTKOle1Otkcw=
-github.com/comprofix/comprofix-chirpy-static-assets v0.0.0-20260822141537-cdca191eecba/go.mod h1:CeGHwXejRFmU0WStqGqIlJYwrK/jQZ2BwRfGcHlGBao=
+github.com/comprofix/comprofix-chirpy-static-assets v0.0.0-20260829121655-a9a1d25111be h1:WklX9sC3uk8vU041T3pzuHdf1pLw31h5mFNtvhkWa/c=
+github.com/comprofix/comprofix-chirpy-static-assets v0.0.0-20260829121655-a9a1d25111be/go.mod h1:CeGHwXejRFmU0WStqGqIlJYwrK/jQZ2BwRfGcHlGBao=
 github.com/comprofix/hugo-theme-chirpy v0.0.0-20260822142204-566f44240243 h1:u1+4Xk+8/hYq6zqFAtQXFA9o5OOijZBsLkxkXL60oO0=
 github.com/comprofix/hugo-theme-chirpy v0.0.0-20260822142204-566f44240243/go.mod h1:hTwltAzwp4lcTxxKdcmL1WqYns77XXwnNBjPRqP/7aI=
 github.com/gohugoio/hugo-mod-bootstrap-scss/v5 v5.20300.20400/go.mod h1:uekq1D4ebeXgduLj8VIZy8TgfTjrLdSl6nPtVczso78=
