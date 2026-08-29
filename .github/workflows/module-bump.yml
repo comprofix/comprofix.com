@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           # The default GITHUB_TOKEN is deliberately prevented from
           # triggering other workflows when it pushes, to stop infinite
@@ -32,12 +32,12 @@ jobs:
           token: ${{ secrets.DISPATCH_TOKEN }}
 
       - name: Set up Go
-        uses: actions/setup-go@v5
+        uses: actions/setup-go@v7
         with:
           go-version-file: go.mod
 
       - name: Set up Node (for Dart Sass)
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: 22
 
