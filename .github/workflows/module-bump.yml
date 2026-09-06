@@ -17,12 +17,6 @@ concurrency:
 
 env:
   HUGO_VERSION: "0.131.0"
-  # A bumped module may require a newer Go than go.mod currently declares.
-  # actions/setup-go pins GOTOOLCHAIN=local to the version in go.mod, which
-  # blocks Go's automatic toolchain download in that case. Allow auto so
-  # `go get`/`hugo mod tidy`/`hugo build` can all fetch whatever toolchain
-  # the new module needs, throughout the job.
-  GOTOOLCHAIN: auto
 
 jobs:
   bump:
@@ -41,6 +35,14 @@ jobs:
         uses: actions/setup-go@v7
         with:
           go-version-file: go.mod
+
+      - name: Allow Go toolchain auto-upgrade
+        # actions/setup-go pins GOTOOLCHAIN=local to the version in go.mod
+        # via $GITHUB_ENV, which blocks Go's automatic toolchain download.
+        # Re-export it as auto so a bumped module that needs a newer Go
+        # (in the steps below, including the hugo build) can fetch it and
+        # update go.mod's go directive accordingly.
+        run: echo "GOTOOLCHAIN=auto" >> "$GITHUB_ENV"
 
       - name: Set up Node (for Dart Sass)
         uses: actions/setup-node@v7
