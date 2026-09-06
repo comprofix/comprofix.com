@@ -1,7 +1,7 @@
-github.com/comprofix/comprofix-chirpy-static-assets v0.0.0-20260829160748-c4235ed572a6 h1:V2r7XIuqcEyMIHmekEwoJ3VqEOB22eqUo8jqz3BvY9g=
-github.com/comprofix/comprofix-chirpy-static-assets v0.0.0-20260829160748-c4235ed572a6/go.mod h1:CeGHwXejRFmU0WStqGqIlJYwrK/jQZ2BwRfGcHlGBao=
-github.com/comprofix/hugo-theme-chirpy v0.0.0-20260822142204-566f44240243 h1:u1+4Xk+8/hYq6zqFAtQXFA9o5OOijZBsLkxkXL60oO0=
-github.com/comprofix/hugo-theme-chirpy v0.0.0-20260822142204-566f44240243/go.mod h1:hTwltAzwp4lcTxxKdcmL1WqYns77XXwnNBjPRqP/7aI=
+github.com/comprofix/comprofix-chirpy-static-assets v0.0.0-20260905233040-c0744deb66ca h1:DZPZ4oIfAazX3nxyknBOYmoqml/lF6ask3/86OjYrO8=
+github.com/comprofix/comprofix-chirpy-static-assets v0.0.0-20260905233040-c0744deb66ca/go.mod h1:XStmhGN1TGInP7KO2OsNs+YpEtqCMj6JytksFvtOK8Q=
+github.com/comprofix/hugo-theme-chirpy v0.0.0-20260905154155-23b7f2e04fd7 h1:vsn089gq3UEgb3+IgSSXKruwjvU+BHc+EBIKIzy/pA0=
+github.com/comprofix/hugo-theme-chirpy v0.0.0-20260905154155-23b7f2e04fd7/go.mod h1:O2fRuruxiNPS1o+Kg/NY1Mjl8bGdZQ5FcdmefT/doWE=
 github.com/gohugoio/hugo-mod-bootstrap-scss/v5 v5.20300.20400/go.mod h1:uekq1D4ebeXgduLj8VIZy8TgfTjrLdSl6nPtVczso78=
 github.com/gohugoio/hugo-mod-jslibs-dist/popperjs/v2 v2.21100.20000 h1:GZxx4Hc+yb0/t3/rau1j8XlAxLE4CyXns2fqQbyqWfs=
 github.com/gohugoio/hugo-mod-jslibs-dist/popperjs/v2 v2.21100.20000/go.mod h1:mFberT6ZtcchrsDtfvJM7aAH2bDKLdOnruUHl0hlapI=
