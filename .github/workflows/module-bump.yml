@@ -17,6 +17,12 @@ concurrency:
 
 env:
   HUGO_VERSION: "0.131.0"
+  # A bumped module may require a newer Go than go.mod currently declares.
+  # actions/setup-go pins GOTOOLCHAIN=local to the version in go.mod, which
+  # blocks Go's automatic toolchain download in that case. Allow auto so
+  # `go get`/`hugo mod tidy`/`hugo build` can all fetch whatever toolchain
+  # the new module needs, throughout the job.
+  GOTOOLCHAIN: auto
 
 jobs:
   bump:
@@ -62,12 +68,6 @@ jobs:
       - name: Bump module pins
         env:
           GOFLAGS: -mod=mod
-          # A bumped module may require a newer Go than go.mod currently
-          # declares. actions/setup-go pins GOTOOLCHAIN=local to the version
-          # in go.mod, which blocks Go's automatic toolchain download in that
-          # case. Allow auto so `go get` can fetch whatever toolchain the new
-          # module needs and update go.mod's go directive accordingly.
-          GOTOOLCHAIN: auto
         run: |
           go get "github.com/comprofix/hugo-theme-chirpy@${{ steps.resolve.outputs.theme_sha }}"
           go get "github.com/comprofix/comprofix-chirpy-static-assets@${{ steps.resolve.outputs.assets_sha }}"
