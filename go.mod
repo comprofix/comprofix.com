@@ -1,6 +1,6 @@
 module github.com/comprofix/comprofix.com
 
-go 1.27.1
+go 1.27.0
 
 require (
 	github.com/comprofix/comprofix-chirpy-static-assets v0.0.0-20260829160748-c4235ed572a6 // indirect
